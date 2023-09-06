@@ -4,8 +4,7 @@
       <p class="prototype__heading">
         <%= @prototype.title %>
       </p>
-
-      <%= link_to @prototype.user.name, user_path(@prototype.user) if @user.present? %>
+      <%= link_to "by #{@prototype.user.name}", user_path(@prototype.user) if @user.present? %>
 
       <% if @user_owns_prototype %>
         <div class="prototype__manage">
