@@ -4,12 +4,13 @@
       <p class="prototype__heading">
         <%= @prototype.title %>
       </p>
-      <% if @user_owns_prototype %>
-        <div class="prototype__manage">
+        <%= link_to "by: #{@prototype.user.name}", user_path(@prototype.user), class: :prototype__user %>
+      <div class="prototype__manage">
+        <% if @user_owns_prototype %>
           <%= link_to "編集する", edit_prototype_path(@prototype), class: 'prototype__btn' %>
           <%= link_to "削除する", prototype_path(@prototype), method: :delete, data: { confirm: 'Are you sure?' }, class: 'prototype__btn' %>
-        </div>
-      <% end %>
+        <% end %>
+      </div>
 
       <div class="prototype__image">
         <%= image_tag(@prototype.image) if @prototype.image.attached? %>
