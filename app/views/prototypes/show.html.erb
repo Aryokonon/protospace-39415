@@ -4,8 +4,6 @@
       <p class="prototype__heading">
         <%= @prototype.title %>
       </p>
-      <%= link_to "by #{@prototype.user.name}", user_path(@prototype.user) if @user.present? %>
-
       <% if @user_owns_prototype %>
         <div class="prototype__manage">
           <%= link_to "編集する", edit_prototype_path(@prototype), class: 'prototype__btn' %>
