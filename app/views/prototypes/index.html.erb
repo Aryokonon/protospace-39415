@@ -9,7 +9,6 @@
     <%# ログインしているときは上記を表示する %>
     <div class="card__wrapper">
       <% @prototypes.each do |prototype| %>
-<%= link_to "by " + prototype.user.name, user_path(prototype.user), class: :prototype__user %>
         <%= render partial: 'prototype', locals: { prototype: prototype } %>
       <% end %>
     </div>
