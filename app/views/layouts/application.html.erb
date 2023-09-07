@@ -17,6 +17,7 @@
           <%= link_to image_tag("logo.png", class: :logo), root_path %>
         </div>
         <% if user_signed_in? %>
+          <%= link_to "こんにちは#{current_user.name}さん", user_path(current_user) %>
           <div class="nav__right">
             <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: :nav__logout %>
             <%= link_to "New Proto", new_prototype_path, class: :nav__btn %>
